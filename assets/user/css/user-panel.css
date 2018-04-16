@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+body {
+    font-family: 'Nunito', sans-serif;
+    display:none;
+    overflow-x: hidden;
+    /*border-top:3px solid #0747a6;*/
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #d8dee4; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4089f5;
+}
+/* START Helper presets */
+.data-img {
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+.datatable {
+    width:100%!important;
+}
+.text-reset {
+    text-decoration:none!important;
+}
+.text-white {
+    color:#fff!important;
+}
+.text-shadow {
+    text-shadow:0 1px 1px #333;
+}
+.box-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+.form-control {
+    border-radius:1px;
+}
+.btn {
+    border-radius:2px;
+}
+.box {
+    padding:20px;
+    background-color:#fff;
+    min-height:20px;
+    border:1px solid #e3e3e3;
+    margin-bottom:20px;
+}
+/* END Helper presets */
+
+/* START All About Headers */
+#wrapper {
+     padding-left: 0;
+     -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+     -o-transition: all 0.5s ease;
+     transition: all 0.5s ease;
+}
+#wrapper.toggled {
+     padding-left: 250px;
+}
+#sidebar-wrapper {
+     z-index: 1000;
+     position: fixed;
+     left: 250px;
+     width: 0;
+     height: 100%;
+     margin-left: -250px;
+     overflow-y: auto;
+     background-color: #0747a6;
+     -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+     -o-transition: all 0.5s ease;
+     transition: all 0.5s ease;
+}
+#sidebar-wrapper .sidebar-brand {
+    background-color:rgba(0,0,0,0.5);
+    text-align:center;
+}
+#sidebar-wrapper .sidebar-brand .user-thumb .overlay {
+    background-color:rgba(0,0,0,0.5);
+    padding:20px;
+}
+#sidebar-wrapper .sidebar-brand .user-thumb img {
+    width:70px;
+    height:70px;
+    object-position:center;
+    object-fit:cover;
+    margin:auto;
+    border-radius:50%;
+    border:3px solid rgba(255,255,255,0.5);
+}
+#sidebar-wrapper .sidebar-brand .user-details {
+    padding:20px;
+    background-color:#ffe429;
+}
+#sidebar-wrapper .sidebar-brand .user-details ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#sidebar-wrapper .sidebar-brand .user-details ul > li:first-child {
+    color:#003d98;
+    font-weight:bold;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+}
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+/* Sidebar Styles */
+.sidebar-nav {
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ .sidebar-nav li {
+     text-indent: 7px;
+     line-height: 45px;
+}
+.sidebar-nav li .side-dropdown {
+    background-color:#113871;
+}
+.sidebar-nav li .side-dropdown li a {
+    color:#fff;
+}
+.sidebar-nav li a {
+     display: block;
+     text-decoration: none;
+     color: #fff;
+     transition: all 200ms ease;
+}
+.sidebar-nav li a .fa {
+    display:inline-block;
+    min-width:30px;
+}
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    background-color: #073d8d;
+    border-right:3px solid #ffe429;
+}
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+     text-decoration: none;
+}
+.user-panel-content-wrap .content-wrap {
+    padding-top:80px;
+}
+.user-panel-header {
+    padding:20px 0;
+    background-color:#d8dee4;
+    z-index:1;
+    position:fixed;
+    width:100%;
+}
+.user-panel-header h1 {
+    margin:0;
+    line-height:1.3;
+    font-size:18px;
+    color:#172b4d;
+}
+.user-panel-header h1 .app-drawer {
+    margin-right:5px;
+    text-decoration:none;
+}
+.user-panel-header h1 .app-drawer .fa {
+    color: rgba(0, 43, 107, 0.5);
+}
+/* END All About Headers */
+
+/* START My Account & Password Management */
+.user-my-account-content .content-wrap .user-info,
+.user-password-management-content .content-wrap .user-info {
+    margin-bottom:30px;
+    border:1px solid #e3e3e3;
+    background-color:#fff;
+}
+.user-my-account-content .content-wrap .user-info .avatar-wrap .overlay,
+.user-password-management-content .content-wrap .user-info .avatar-wrap .overlay {
+    min-height:40vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background-color:rgba(0,0,0,0.2);
+}
+.user-my-account-content .content-wrap .user-info .avatar-wrap img,
+.user-password-management-content .content-wrap .user-info .avatar-wrap img {
+    height:150px;
+    width:150px;
+    margin:auto;
+    border:3px solid rgba(255,255,255,0.5);
+    border-radius:50%;
+    object-fit: cover;
+    object-position: center;
+}
+.user-my-account-content .content-wrap .user-info .user-details,
+.user-password-management-content .content-wrap .user-info .user-details {
+    padding:30px;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack .stack-header,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack .stack-header {
+    padding:20px;
+    margin-bottom:20px;
+    background-color:rgba(7,71,166,0.9);
+    border-left:4px solid #ffe429;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack .stack-header h2,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack .stack-header h2 {
+    font-size:15px;
+    margin:0;
+    color:#fff;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack .detail-list,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack .detail-list {
+    margin-bottom:20px;
+    padding:0 20px;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack ul,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack ul {
+    text-align:center;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack ul > li,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack ul > li {
+    line-height:1.5;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack ul .name,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack ul .name {
+    font-size:18px;
+    font-weight:bold;
+    margin:0;
+}
+.user-my-account-content .content-wrap .user-info .user-details .detail-stack dl > dd,
+.user-password-management-content .content-wrap .user-info .user-details .detail-stack dl > dd {
+    font-style:italic;
+    color:rgba(0,0,0,0.5);
+}
+/* END My Account & Password Management */
+
+/* START Edit My Account Form & Change Password Form */
+.user-edit-my-account-content .content-wrap .form-box,
+.user-change-password-content .content-wrap .form-box {
+    padding:30px;
+    background-color:#fff;
+    min-height:20px;
+    border:1px solid #e3e3e3;
+    margin-bottom:20px;
+}
+.user-edit-my-account-content .content-wrap .stack-header,
+.user-change-password-content .content-wrap .stack-header {
+    padding: 20px;
+    /*margin-bottom: 20px;*/
+    background-color: rgba(7,71,166,0.9);
+    border-left: 4px solid #ffe429;
+}
+.user-edit-my-account-content .content-wrap .stack-header h2,
+.user-change-password-content .content-wrap .stack-header h2 {
+    font-size: 15px;
+    margin: 0;
+    color: #fff;
+}
+/* END Edit My Account Form & Change Password Form */
+
+@media(min-width:768px) {
+    #wrapper {
+        /*padding-left: 0;*/
+        padding-left: 250px;
+    }
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+    #sidebar-wrapper {
+        width: 250px;
+        overflow-x:hidden;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+    #page-content-wrapper {
+        /*padding: 20px;*/
+        position: relative;
+    }
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+    .user-details .detail-stack dl > dt {
+        width:200px;
+    }
+    .user-details .detail-stack dl > dd {
+        text-align:right;
+    }
+}
+@media(max-width:767px) {
+    body {
+        overflow-x:hidden;
+    }
+    #wrapper {
+        padding-left: 0;
+    }
+    #sidebar-wrapper {
+        width: 0;
+    }
+}

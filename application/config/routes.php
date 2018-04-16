@@ -104,8 +104,8 @@ $route['admin/(:any)'] = 'admin/admin/$1';
 
 $route['admin/(:any)'] = 'admin/$1';
 
-
-
+$route['user'] = 'user/user/index';
+$route['user/(.+)'] = 'user/user/index';
 
 $route['(:any)'] = "post/index";
 

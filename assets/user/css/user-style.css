@@ -1,0 +1,146 @@
+/* START General */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+	font-family: 'Poppins', sans-serif;
+	display:none;
+    overflow-x:hidden;
+}
+/* END General */
+
+/* START Helper presets */
+.data-img {
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+.text-reset {
+    text-decoration:none!important;
+}
+.text-white {
+    color:#fff!important;
+}
+.text-shadow {
+    text-shadow:0 1px 1px #333;
+}
+.box-shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+.form-control {
+    border-radius:1px;
+}
+.btn {
+    border-radius:2px;
+}
+/* END Helper presets */
+
+/* START Sign Up */
+.page-signup-wrap .signup-content .overlay {
+    border-top:3px solid #428bca;
+	min-height:100vh;
+	padding:80px 0;
+	align-items:center;
+	background-color:#f1f1f1;
+}
+.page-signup-wrap .signup-content .content-wrap .logo-brand {
+    margin-bottom:30px;
+}
+.page-signup-wrap .signup-content .content-wrap .logo-brand img {
+    margin:auto;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard {
+    margin-bottom:30px;
+    padding:0 10px;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-panel {
+    border:1px solid #ddd;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-item {
+    padding:3px;
+    text-align:center;
+    background-color:#fff;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-item .step {
+    display:block;
+    padding:5px;
+    border-radius:2px;
+    text-decoration:none;
+    background-color:transparent;
+    width:100%;
+    border:0;
+    color:#428bca;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-item .step p {
+    font-size:11px;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-item .active {
+    background-color:#428bca;
+    color:#fff;
+}
+.page-signup-wrap .signup-content .content-wrap .step-wizard .step-item:not(:last-child) {
+    border-right:1px dotted #fff;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard {
+    margin-bottom:20px;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard .step-content {
+    padding:30px;
+    /*border:2px dashed #428bca;*/
+    background-color:#fff;
+    display:none;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard .step-content.active {
+    display:block!important;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard .step-content .step-header {
+    font-size:20px;
+    margin:0 0 10px;
+    line-height:1.5;
+    text-transform:uppercase;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard .step-content .terms-agreement {
+    max-height:300px;
+    overflow-y:scroll;
+    padding:10px;
+    border:2px solid #ddd;
+    margin-bottom:20px;
+}
+.page-signup-wrap .signup-content .content-wrap .form-wizard .step-content .wizard-content-cta {
+    text-align:right;
+}
+/* END Sign Up */
+
+/* START Sign in */
+.page-signin-wrap .signin-content .overlay {
+    border-top:3px solid #428bca;
+    min-height:100vh;
+    padding:80px 0;
+    align-items:center;
+    background-color:#f1f1f1;
+}
+.page-signin-wrap .signin-content .content-wrap .logo-brand {
+    margin-bottom:30px;
+}
+.page-signin-wrap .signin-content .content-wrap .logo-brand img {
+    margin:auto;
+}
+.page-signin-wrap .signin-content .content-wrap .form-wrap {
+    padding:30px;
+    /*border:1px dashed #428bca;*/
+    background-color:#fff;
+    margin-bottom:20px;
+}
+.page-signin-wrap .signin-content .content-wrap .form-wrap .form-header {
+    font-size:20px;
+    margin:0 0 10px;
+    line-height:1.5;
+    text-transform:uppercase;
+}
+.page-signin-wrap .signin-content .content-wrap .form-wrap .form-cta {
+    text-align:right;
+}
+/* END Sign in */
