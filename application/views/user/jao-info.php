@@ -11,7 +11,27 @@
 			<?php echo $profile['message']; ?>
 		</div>
 		<div class="box">
-			<?php dump($profile); ?>
+			<dl class="dl-horizontal">
+				<dt>ID</dt>
+				<dd><?php echo $profile['data']->id; ?></dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Firstname</dt>
+				<dd><?php echo $profile['data']->firstname; ?></dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Lastname</dt>
+				<dd><?php echo $profile['data']->lastname; ?></dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Phone</dt>
+				<dd><?php echo $profile['data']->phone; ?></dd>
+			</dl>
+			<dl class="dl-horizontal">
+				<dt>Status</dt>
+				<dd><?php echo $profile['data']->status; ?></dd>
+			</dl>
+			<?php //dump($profile); ?>
 		</div>
 		<?php } ?>
 	</div>

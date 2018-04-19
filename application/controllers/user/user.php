@@ -127,11 +127,24 @@
 		}
 		public function _signin_process() {
 			$request = $this->input->post();
-            if($this->auth->login_user($request['email'], $request['password'])) {
-                $response = json_encode(array('result' => 'success', 'redirect' => base_url('user/overview')));
-            } else {
-                $response = json_encode(array('result' => 'error', 'alert' => 'Oops! Something went wrong', 'message' => 'Invalid credentials'));
-            }
+			// api process to verify first login
+			if($phone_data = $this->user_model->get_phone_from_email($request['email'])) {
+				$reqAPI = check_signinAPI($phone_data[0]->phone);
+				if(isset($reqAPI) AND $reqAPI['status'] == 1) {
+		            if($this->auth->login_user($request['email'], $request['password'])) {
+		                $response = json_encode(array('result' => 'success', 'redirect' => base_url('user/overview')));
+		            } else {
+		                $response = json_encode(array('result' => 'error', 'alert' => 'Oops! Something went wrong', 'message' => 'Invalid credentials'));
+		            }
+		        } else {
+		        	// check_signinAPI($this->user_model->get_phone_from_email('mani.pakyaw@yopmail.com')[0]->phone)
+		        	$response = json_encode(array('result' => 'error', 'alert' => 'Oops! Something went wrong', 'message' => $reqAPI['message']));
+		        }
+	        } else {
+	        	$response = json_encode(array('result' => 'error', 'alert' => 'Oops! Something went wrong', 'message' => 'No '.$request['email'].' is registered at the moment'));
+	        }
+            // else download app
+            // Login to app
             echo $response;
 		}
 		public function _signout() {
@@ -227,7 +240,6 @@
 		}
 		public function _user_my_account_edit($page = 'edit-my-account') {
 			if($req = $this->input->post()) {
-				$sess_id = 5; // temporary
 				if(!empty($_FILES['default_photo']['name'])) {
                     $date = date('Y');
                     $path = APPPATH.'../uploads/user/'.$date.'/';
@@ -324,8 +336,8 @@
 
 		public function _user_tester() {
 			if($segment = $this->uri->segment(3,0) and $segment == 'data') {
-				$data = json_encode(array('users' => $this->user_model->get_users()));
-				echo $data;
+				// dump($this->jao->is_signedinJAO('+639165566106'));
+				dump(check_signinAPI($this->user_model->get_phone_from_email('mani.pakyaw@yopmail.com')[0]->phone));
 			} else {
 				$this->load->view('user/test');
 			}

@@ -107,7 +107,38 @@
         }
         return $response;
     }
-
+    // Check jao download and signup
+    function check_signinAPI($phone) {
+        $app =& get_instance();
+        try {
+            $res = $app->jao->is_signedinJAO($phone);
+            if(isset($res['status']) and $res['status'] == 200) {
+                $result = $res['body'];
+                if($result->status->status_code == 1) {
+                    $response = array(
+                        'status' => 1,
+                        'message' => $result->message
+                    );
+                } else {
+                    $response = array(
+                        'status' => 0,
+                        'message' => 'Please download and login to JAO'
+                    );
+                }
+            } else {
+                $response = array(
+                    'status' => 0,
+                    'message' => 'Service is not available at the moment.'
+                );
+            }
+        } catch(\Exception $e) {
+            $response = array(
+                'status' => 0,
+                'message' => 'Data are not available at the moment.'
+            );
+        }
+        return $response;
+    }
     // Get Trip History
     function tripsAPI($phone) {
         $app =& get_instance();

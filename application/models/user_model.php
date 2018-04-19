@@ -48,6 +48,18 @@ class User_model extends CI_Model {
 		}
 	}
 
+	public function get_phone_from_email($data) {
+		$this->db->select('phone');
+		$this->db->from($this->table);
+		$this->db->where('email', $data);
+		$dataset = $this->db->get();
+		if($dataset->num_rows()){
+			return $dataset->result();
+		} else {
+			return FALSE;
+		}
+	}
+
 	public function update_user($id, $data) {
 		$data['updated_at'] = date('Y-m-d H:i:s');
 		$this->db->where('id', $id);

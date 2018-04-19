@@ -12,7 +12,6 @@ class jao {
         ]);
     }
 	public function signupJAO($data) {
-		// $endpoint = 'https://test.loopna.com/latest/omw/sign_up';
 		$endpoint = 'sign_up';
 		$params = array(
 			'fname' => $data['first_name'],
@@ -20,6 +19,20 @@ class jao {
 			'phone' => $data['phone'], 
 			'password' => $data['password'],
 			'email' => (isset($data['email'])) ? $data['email'] : NULL
+		);
+		$request = $this->client->request('GET', $endpoint, [
+			'query' => $params
+		]);
+		$response = array(
+        	'status' => $request->getStatusCode(),
+        	'body' => json_decode($request->getBody())
+        );
+        return $response;
+	}
+	public function is_signedinJAO($data) {
+		$endpoint = 'check_if_already_login';
+		$params = array(
+			'mobile_number' => $data
 		);
 		$request = $this->client->request('GET', $endpoint, [
 			'query' => $params
