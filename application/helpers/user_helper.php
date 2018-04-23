@@ -1,9 +1,9 @@
 <?php
-	function dump($data) {
-		echo '<pre>';
-		print_r($data);
-		echo '</pre>';
-	}
+    function dump($data) {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
     function truncate($str, $width) {
         return strtok(wordwrap(strip_tags($str), $width, "...\n"), "\n");
     }
@@ -25,22 +25,25 @@
         $app->load->library('email');
 
         /* Local Email Function -- Remove this when uploaded on live site */
-        // $config['protocol'] = 'smtp';
-        // $config['smtp_host'] = 'ssl://smtp.gmail.com';
-        // $config['smtp_port'] = '465';
-        // $config['smtp_user'] = 'webtestpurpose@gmail.com';
-        // $config['smtp_pass'] = 'lock001156058';
-        // $config['mailtype'] = 'html';
-        // $config['charset'] = 'iso-8859-1';
-        // $config['wordwrap'] = TRUE;
-        // $app->email->initialize($config);
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'ssl://smtp.gmail.com';
+        $config['smtp_port'] = '465';
+        $config['smtp_user'] = 'webtestpurpose@gmail.com';
+        $config['smtp_pass'] = 'lock001156058';
         /* Local Email Function -- Remove this when uploaded on live site */
+        // $config['protocol'] = 'sendmail';
+        $config['mailpath'] = '/usr/sbin/sendmail';
+        $config['charset'] = 'iso-8859-1';
+        $config['mailtype'] = 'html';
+        $config['wordwrap'] = TRUE;
+        $app->email->initialize($config);
 
         $app->email->set_newline("\r\n");
-        $app->email->from($data['email'], $data['name']);
-        $app->email->to('cameo@yopmail.com'); // Temp
+        $app->email->from('no-reply@aluckylock.com', 'Aluckylock');
+        $app->email->to($data['email']);
         $app->email->subject($data['subject']);
         $app->email->message($data['message']);
+
         if($app->email->send()) {
             return TRUE;
         } else {

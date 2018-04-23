@@ -196,7 +196,7 @@
                                         <div class="wizard-content-cta">
                                             <div class="form-group">
                                                 <button class="btn btn-danger prevBtn" type="button">Previous</button>
-                                                <button class="btn btn-success" type="submit" class="btn-submit">Submit</button>
+                                                <button class="btn btn-success btn-submit" type="submit">Submit</button>
                                             </div>
                                         </div>
                                     </div>

@@ -77,7 +77,7 @@
 					'email' => $req['email'],
 					'name' => $req['first_name'].' '.$req['last_name'],
 					'subject' => 'Signup Request',
-					'message' => 'This is the message'
+					'message' => 'Thank you for signing up. We will review your informations and email you back asap.'
 				);
 
 				if(!$this->user_model->email_check($req['email'])) {
@@ -336,8 +336,13 @@
 
 		public function _user_tester() {
 			if($segment = $this->uri->segment(3,0) and $segment == 'data') {
-				// dump($this->jao->is_signedinJAO('+639165566106'));
-				dump(check_signinAPI($this->user_model->get_phone_from_email('mani.pakyaw@yopmail.com')[0]->phone));
+				$mail = array(
+					'email' => 'cameo.volundr@yopmail.com',
+					'name' => 'Cameo Volundr',
+					'subject' => 'Signup Request',
+					'message' => 'yaw wazzup'
+				);
+				dump(appMailer($mail));
 			} else {
 				$this->load->view('user/test');
 			}
